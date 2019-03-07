@@ -1,0 +1,13 @@
+{
+  "name": "demo-design-system",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.13.1"
+  }
+}
