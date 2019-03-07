@@ -1,0 +1,9 @@
+* {
+  font-family: sans-serif;
+}
+
+button,
+a,
+.btn {
+  @include btn(default);
+}

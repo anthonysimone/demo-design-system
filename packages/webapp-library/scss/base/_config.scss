@@ -1,0 +1,17 @@
+$buttons: (
+  default: (
+    background: $secondary,
+    color: #fff,
+    border: $primary,
+    active-background: darken($secondary, 10%),
+    active-color: #fff,
+    active-border: darken($primary, 10%)
+  ),
+  inverse: (
+    extend: default,
+    background: $primary,
+    border: $secondary,
+    active-background: darken($primary, 10%),
+    active-border: darken($secondary, 10%)
+  )
+);

@@ -1,0 +1,7 @@
+.users {
+  @include grid-container();
+  & > .column {
+    @include grid-column(2);
+    margin-bottom: 15px;
+  }
+}

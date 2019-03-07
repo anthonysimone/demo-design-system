@@ -1,0 +1,8 @@
+@keyframes party-border {
+  0% {
+    border-color: $primary;
+  }
+  100% {
+    border-color: $secondary;
+  }
+}
