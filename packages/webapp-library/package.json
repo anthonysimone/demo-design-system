@@ -1,13 +1,13 @@
 {
   "name": "@asimone/webapp-library",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@asimone/webapp-framework": "^0.0.1"
+    "@asimone/webapp-framework": "^0.0.2"
   },
   "devDependencies": {
     "gulp": "^4.0.0",
