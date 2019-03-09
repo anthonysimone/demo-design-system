@@ -1,7 +1,6 @@
 // base settings and configurations
 @import "base/settings";
 @import "base/config";
-@import "base/animations";
 
 // normalize.css
 @import "normalize";
@@ -11,15 +10,8 @@
 // import design system library
 @import "framework-core";
 
-// base style and theming
-@import "content/default";
-
 // components
-@import "components/cards";
-@import "components/card";
-@import "components/users";
-@import "components/user";
-@import "components/banner";
+@import "components/buttons";
 
 // no inline scss in this file
-// xxx
+// ---

@@ -1,0 +1,4 @@
+button.btn,
+a.btn {
+  @include btn(default);
+}

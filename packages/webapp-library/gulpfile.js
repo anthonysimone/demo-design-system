@@ -20,7 +20,9 @@ function makeIncludePath(path) {
 
 // Manually defined include paths for assets that aren't configured to be supported like the above packages
 let includePaths = [
-  makeIncludePath('node_modules/normalize.css/')
+  '../../node_modules',
+  makeIncludePath('node_modules/normalize.css/'),
+  makeIncludePath('node_modules/@frctl/')
 ];
 
 // Add any defined paths
@@ -36,9 +38,45 @@ gulp.task('sass', function () {
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./public/css'));
 });
  
 gulp.task('sass:watch', function () {
-  gulp.watch('./scss/**/*.scss', ['sass']);
+  gulp.watch('./scss/**/*.scss', gulp.series('sass'));
+});
+
+/**
+ * Fractal helper tasks, these can also be done via fractal cli alone
+ * fractal cli equivalent: `fractal start --sync`
+ * npm script: `npm run start`
+ */
+const fractal = require('./fractal.js');
+const logger = fractal.cli.console; // keep a reference to the fractal CLI console utility
+
+gulp.task('fractal:start', function(){
+  const server = fractal.web.server({
+      sync: true
+  });
+  server.on('error', err => logger.error(err.message));
+  return server.start().then(() => {
+      logger.success(`Fractal server is now running at ${server.url}`);
+  });
+});
+
+/**
+ * Run a static export of the project web UI.
+ *
+ * This task will report on progress using the 'progress' event emitted by the
+ * builder instance, and log any errors to the terminal.
+ *
+ * fractal cli equivalent: `fractal build`
+ * npm script: `npm run build`
+ */
+gulp.task('fractal:build', function(){
+  const builder = fractal.web.builder();
+  builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
+  builder.on('error', err => logger.error(err.message));
+  return builder.build().then(() => {
+      logger.success('Fractal build completed!');
+  });
 });

@@ -1,0 +1,1 @@
+{"version":3,"sources":["ui-theme/_mode-theme-overrides.scss"],"names":[],"mappings":"AAAA,OAAO,CAAC;EACN,gBAAgB,EAAE,MAAM,GACzB","file":"../mode-theme.css","sourcesContent":[".Header {\n  background-color: purple;\n}"]}

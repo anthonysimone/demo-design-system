@@ -1,7 +1,0 @@
-.cards {
-  @include grid-container();
-  & > .card-item {
-    @include grid-column(4);
-    margin-bottom: 15px;
-  }
-}
