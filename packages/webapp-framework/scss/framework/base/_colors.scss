@@ -1,4 +1,10 @@
-// Color scheme
+////
+/// Framework - Tokens
+/// @group 01_tokens
+////
+
+
+/// Green color variants
 $green-swatches: (
   'green-800': #1B8D56,
   'green-700': #1F673C,
@@ -27,6 +33,7 @@ $green-200: #98D5B0;
 $green-100: #B7E1C8;
 $green-50: #F2FAF5;
 
+/// Gray color variants
 $gray-swatches: (
   'gray-950': #191925,
   'gray-920': #2B2B39, // for mode subway

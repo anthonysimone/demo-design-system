@@ -1,8 +1,9 @@
 ////
 /// Framework - Buttons
+/// @group 10_components
 ////
 
-
+/// All available default button configurations
 $buttons: (
   default: (
     background: $green-400,
@@ -20,11 +21,16 @@ $buttons: (
   )
 ) !default;
 
-
+/// Default button style mixin
+/// @param {String} $button-key - the configuration key in the $buttons map to use
+/// @param {String} $size [medium] - the button size, choose from defined keywords in the mixin
+/// @example scss - Create button
+///   button {
+///     @include btn(default, small);
+///   }
 @mixin btn($button-key, $size: medium) {
   $button: extend-in-map($buttons, $button-key);
 
-  // @include disable-mouse-outline;
   display: inline-block;
   line-height: 1;
   font-weight: 400;
@@ -69,6 +75,7 @@ $buttons: (
 }
 
 
+/// All available ghost button configurations
 $ghost-buttons: (
   default: (
     color: $green-600,
@@ -88,10 +95,16 @@ $ghost-buttons: (
 ) !default;
 
 
+/// Ghost button mixin
+/// @param {String} $button-key - the configuration key in the $ghost-buttons map to use
+/// @param {String} $size [medium] - the button size, choose from defined keywords in the mixin
+/// @example scss - Create ghost button
+///   button {
+///     @include ghost-btn(alert);
+///   }
 @mixin ghost-btn($button-key, $size: medium) {
   $button: extend-in-map($ghost-buttons, $button-key);
 
-  // @include disable-mouse-outline;
   display: inline-block;
   line-height: 1;
   font-weight: 400;

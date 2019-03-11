@@ -1,5 +1,6 @@
 ////
-/// @group Utility
+/// Helper functions
+/// @group 50_utility
 ////
 
 
@@ -67,7 +68,6 @@ $z-layers: (
 
 
 /// Store groups of commonly used selectors
-/// @group Selectors
 /// @see selector-group
 $selectors: (
   headers: 'h1, h2, h3, h4, h5, h6',

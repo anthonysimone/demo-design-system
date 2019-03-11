@@ -1,0 +1,7 @@
+package: package.json
+groups:
+  01_tokens: Tokens
+  10_components: Components
+  50_utility: Utility
+sort:
+  - group

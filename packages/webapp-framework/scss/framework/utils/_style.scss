@@ -1,8 +1,9 @@
 ////
-/// @group Utility
+/// Utility helpers
+/// @group 50_utility
 ////
 
-$img-dir: '../../images' !default;
+// $img-dir: '../../images' !default;
 
 
 /// Apply a background color that extends past it's wrapper.
@@ -27,23 +28,10 @@ $img-dir: '../../images' !default;
   }
 }
 
-/// Required for message styles
-@mixin square($dimensions) {
-  height: $dimensions;
-  width: $dimensions;
-}
-
-/// Required for message styles
-@mixin circle($dimensions) {
-  height: $dimensions;
-  width: $dimensions;
-  border-radius: 50%;
-}
-
 /// Return the path to an image in the theme images directory.
-@function img-get($img) {
-  @return $img-dir + $img;
-}
+// @function img-get($img) {
+//   @return $img-dir + $img;
+// }
 
 /// Background image style with background-size parameter
 /// @param {String} $background-size [cover] - Background color
@@ -53,14 +41,7 @@ $img-dir: '../../images' !default;
   background-position: center center;
 }
 
-
-@mixin shadow-border($width: 1px, $color: #ccc) {
-  box-shadow: 0 0 0 $width $color;
-}
-
-
 /// Add a property to the left and right of a box.
-/// @group Layout
 /// @example
 ///   left-right(margin, 10px)
 @mixin left-right($property, $value, $border-style: solid, $border-color: #000) {
