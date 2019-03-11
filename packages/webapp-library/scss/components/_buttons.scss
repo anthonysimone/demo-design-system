@@ -2,3 +2,13 @@ button.btn,
 a.btn {
   @include btn(default);
 }
+
+button.btn--small,
+a.btn--small {
+  @include btn(default, small);
+}
+
+button.btn--alert,
+a.btn--alert {
+  @include btn(alert);
+}

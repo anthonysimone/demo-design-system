@@ -1,0 +1,13 @@
+.component-list {
+  margin: 0;
+  padding: 0;
+  list-item-type: none;
+}
+
+.component-list-item {
+  margin: 0;
+  padding: 0;
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}

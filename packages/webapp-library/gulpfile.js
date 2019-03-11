@@ -1,14 +1,15 @@
 'use strict';
  
-let fs = require('fs');
-let gulp = require('gulp');
-let sass = require('gulp-sass');
+const fs = require('fs');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
-let sourcemaps = require('gulp-sourcemaps');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 // our custom design system package
-let frameworkPaths = require('@asimone/webapp-framework').includePaths;
+const frameworkPaths = require('@asimone/webapp-framework').includePaths;
 // other custom tool paths
-let neatPaths = require('node-neat').includePaths;
+const neatPaths = require('node-neat').includePaths;
 
 /**
  * Helper function to account for manual include paths in mono repo
@@ -35,6 +36,10 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       includePaths: includePaths
+    }))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
     }))
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))

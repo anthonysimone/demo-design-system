@@ -5,43 +5,132 @@
 
 $buttons: (
   default: (
-    background: #777,
-    color: #fff,
-    border: #ccc,
-    active-background: #555,
-    active-color: #fff,
-    active-border: #ccc
+    background: $green-400,
+    color: $gray-50,
+    disabled-color: $gray-600,
+    hover-background: $green-500,
+    active-background: $green-600,
+    disabled-background: $gray-300,
+  ),
+  alert: (
+    extend: default,
+    background: #DA364A,
+    hover-background: #BD3647,
+    active-background: #AF2D3E,
   )
 ) !default;
 
 
-@mixin btn($button-key, $size: small) {
+@mixin btn($button-key, $size: medium) {
   $button: extend-in-map($buttons, $button-key);
 
   // @include disable-mouse-outline;
   display: inline-block;
   line-height: 1;
   font-weight: 400;
+  font-family: $base-font;
 
   appearance: none;
-  border-radius: 5px;
-  border: 2px solid key($button, border);
+  border-radius: 3px;
   background-color: key($button, background);
   color: key($button, color);
-  transition: background-color 300ms ease, border-color 300ms ease;
+  border: none;
+  min-width: 80px;
+  // transition: background-color 300ms ease, border-color 300ms ease;
 
   @if ($size == small) {
-    padding: 6px 10px;
-    font-size: 14px;
-  } @else if ($size == large) {
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 5px 10px;
+    font-size: 12px;
+  } @else if ($size == medium) {
+    padding: 10px 24px;
+    font-size: 12px;
   }
 
-  @include selector-group(active) {
-    border-color: key($button, active-border);
-    background-color: key($button, active-background);
-    color: key($button, active-color);
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    background-color: key($button, hover-background);
     cursor: pointer;
+  }
+
+  // Active state
+  &:active {
+    background-color: key($button, active-background);
+    cursor: pointer;
+  }
+
+  // Disabled state
+  &.disabled,
+  &:disabled {
+    background-color: key($button, disabled-background);
+    color: key($button, disabled-color);
+    cursor: default;
+  }
+}
+
+
+$ghost-buttons: (
+  default: (
+    color: $green-600,
+    border-color: $green-400,
+    hover-border-color: $green-500,
+    active-border-color: $green-600,
+    disabled-color: $gray-600,
+    disabled-border-color: $gray-300,
+  ),
+  alert: (
+    extend: default,
+    color: #AF2D3E,
+    border-color: #DA364A,
+    hover-border-color: #BD3647,
+    active-border-color: #AF2D3E,
+  )
+) !default;
+
+
+@mixin ghost-btn($button-key, $size: medium) {
+  $button: extend-in-map($ghost-buttons, $button-key);
+
+  // @include disable-mouse-outline;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 400;
+  font-family: $base-font;
+
+  appearance: none;
+  border-radius: 3px;
+  background-color: transparent;
+  color: key($button, color);
+  border: 1px solid key($button, border-color);
+  min-width: 80px;
+  // transition: background-color 300ms ease, border-color 300ms ease;
+
+  @if ($size == small) {
+    padding: 4px 9px;
+    font-size: 12px;
+  } @else if ($size == medium) {
+    padding: 9px 23px;
+    font-size: 12px;
+  }
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    border: 1px solid key($button, hover-border-color);
+    cursor: pointer;
+  }
+
+  // Active state
+  &:active {
+    border: 1px solid key($button, active-border-color);
+    cursor: pointer;
+  }
+
+  // Disabled state
+  &.disabled,
+  &:disabled {
+    border: 1px solid key($button, disabled-border-color);
+    color: key($button, disabled-color);
+    cursor: default;
   }
 }

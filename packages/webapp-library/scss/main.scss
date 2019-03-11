@@ -10,8 +10,13 @@
 // import design system library
 @import "framework-core";
 
-// components
-@import "components/buttons";
+// fractal related styles
+@import "fractal-layout/layout";
 
+// components
+@import "components/colors";
+@import "components/buttons";
+@import "components/ghost-buttons";
+@import "components/card";
 // no inline scss in this file
 // ---

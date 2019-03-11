@@ -1,4 +1,26 @@
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 200;
+  src: url(font-path("graphik/graphik-light-web.woff2")) format("woff2"), url(font-path("graphik/graphik-light-web.woff")) format("woff"), url(font-path("graphik/graphik-light-web.ttf")) format("truetype"); }
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 400;
+  src: url(font-path("graphik/graphik-regular-web.woff2")) format("woff2"), url(font-path("graphik/graphik-regular-web.woff")) format("woff"), url(font-path("graphik/graphik-regular-web.ttf")) format("truetype"); }
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 500;
+  src: url(font-path("graphik/graphik-medium-web.woff2")) format("woff2"), url(font-path("graphik/graphik-medium-web.woff")) format("woff"), url(font-path("graphik/graphik-medium-web.ttf")) format("truetype"); }
+
+@font-face {
+  font-family: "icons";
+  src: url("../../icons/fonts/icons.eot?48442214");
+  src: url("../../icons/fonts/icons.eot?48442214#iefix") format("embedded-opentype"), url("../../icons/fonts/icons.woff?48442214") format("woff"), url("../../icons/fonts/icons.ttf?48442214") format("truetype"), url("../../icons/fonts/icons.svg?48442214#3xl") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 .Header {
-  background-color: purple; }
+  background-color: #37B067; }
 
 /*# sourceMappingURL=maps/mode-theme.css.map */

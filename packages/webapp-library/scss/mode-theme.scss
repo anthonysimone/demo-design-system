@@ -1,5 +1,6 @@
-// Mode ui theme settings
-@import "ui-theme/mode-ui-settings";
+
+// Import design system library
+@import "framework-core";
 
 // Add custom ui theming
 @import "ui-theme/mode-theme-overrides";

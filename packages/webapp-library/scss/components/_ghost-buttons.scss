@@ -1,0 +1,14 @@
+button.ghost-btn,
+a.ghost-btn {
+  @include ghost-btn(default);
+}
+
+button.ghost-btn--small,
+a.ghost-btn--small {
+  @include ghost-btn(default, small);
+}
+
+button.ghost-btn--alert,
+a.ghost-btn--alert {
+  @include ghost-btn(alert);
+}

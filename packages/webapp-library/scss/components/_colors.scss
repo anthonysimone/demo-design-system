@@ -1,0 +1,101 @@
+.color-palettes,
+.swatches {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.color-palettes {
+  & > li:not(:first-child) {
+    margin-top: 30px;
+  }
+}
+
+.color-palette {
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2px;
+    width: 100%;
+    .swatch {
+      flex: 1 0 100px;
+      height: 140px;
+      position: relative;
+      margin: 0 2px;
+      font-family: 'Helvetica';
+      font-size: 14px;
+      &:before {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        height: 20px;
+        width: 100%;
+        background: #fff;
+        line-height: 20px;
+      }
+      &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 20px;
+        width: 100%;
+        background: #fff;
+        line-height: 20px;
+      }
+      &.primary {
+        flex: 1 0 100%;
+      }
+    }
+  }
+
+  &.green {
+    .swatch.primary {
+      background-color: $green-default;
+      &:before {
+        content: 'green-400';
+      }
+      &:after {
+        content: '#{$green-default}';
+      }
+    }
+    @each $key, $color in $green-swatches {
+      $i: index($green-swatches, ($key $color));
+
+      .swatch:nth-child(#{$i+1}) {
+        background-color: $color;
+        &:before {
+          content: $key;
+        }
+        &:after {
+          content: '#{$color}';
+        }
+      }
+    }
+  }
+
+  &.gray {
+    .swatch.primary {
+      background-color: $gray-default;
+      &:before {
+        content: 'gray-600';
+      }
+      &:after {
+        content: '#{$gray-default}';
+      }
+    }
+    @each $key, $color in $gray-swatches {
+      $i: index($gray-swatches, ($key $color));
+
+      .swatch:nth-child(#{$i+1}) {
+        background-color: $color;
+        &:before {
+          content: $key;
+        }
+        &:after {
+          content: '#{$color}';
+        }
+      }
+    }
+  }
+}
+
