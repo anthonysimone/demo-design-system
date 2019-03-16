@@ -1,5 +1,9 @@
 module.exports = {
-  notes: `# These are component notes.
-  Something else
+  notes: `# Implementation Notes
+  \`\`\`scss
+.ghost-btn {
+  @include ghost-btn(default);
+}
+  \`\`\`
   `
 }

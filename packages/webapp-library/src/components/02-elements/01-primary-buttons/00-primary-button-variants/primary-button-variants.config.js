@@ -1,5 +1,5 @@
 module.exports = {
-  notes: `# These are component notes.
-  Something else
+  notes: `# Notes
+  A variety of primary buttons. The \`btn\` mixin handles creating this component.
   `
 }

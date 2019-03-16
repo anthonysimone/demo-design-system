@@ -1,5 +1,5 @@
 module.exports = {
-  notes: `# These are component notes.
-  Something else
+  notes: `# Notes
+  A variety of ghost buttons. The \`ghost-btn\` mixin handles creating this component.
   `
 }
