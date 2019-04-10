@@ -1,0 +1,10 @@
+{% import "macros/render.nunj" as render %}
+<div class="Browser-panel Browser-code" data-role="tab-panel" id="browser-{{ entity.id }}-panel-framework">
+  <code class="Code Code--lang-sass">
+    {% if entity.meta %}
+    <pre>{{ entity.meta.scss | highlight('scss') }}
+    </pre>
+    {% else %}
+    {% endif %}
+  </code>
+</div>

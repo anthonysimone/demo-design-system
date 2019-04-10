@@ -9,5 +9,11 @@
   "dependencies": {
     "gulp": "^4.0.0",
     "sassdoc": "^2.5.1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   }
 }

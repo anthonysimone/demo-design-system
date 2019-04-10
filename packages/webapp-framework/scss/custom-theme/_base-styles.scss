@@ -1,0 +1,50 @@
+////
+/// Set style overrides
+////
+
+// fonts
+body {
+  font-family: $base-font;
+}
+
+// colors
+.header {
+  background-color: $green-default;
+}
+.main__heading--secondary {
+  color: $green-default;
+  &:before {
+    background-color: $green-default;
+  }
+}
+.item__name {
+  color: $green-default;
+}
+:not(pre) > code {
+  color: $green-default;
+}
+a {
+  color: $green-default;
+}
+
+// sidebar
+.sidebar__title {
+  font-size: 12px;
+  &:before {
+    content: 'Mode Sass Framework';
+    display: block;
+    font-size: 20px;
+  }
+}
+.sidebar__item--heading {
+  font-size: 18px;
+}
+.sidebar__item {
+  margin: 0;
+}
+.sidebar__item--sub-heading {
+  font-size: 16px;
+}
+.sidebar .list-unstyled {
+  margin: 0;
+}

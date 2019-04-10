@@ -12,6 +12,17 @@ fractal.set('project.version', '0.0.1');
 /* Tell Fractal where the components will live */
 fractal.components.set('path', __dirname + '/src/components');
 
+fractal.components.set('resources', {
+  scss: {
+    label: 'SCSS',
+    match: ['**/*.scss']
+  },
+  other: {
+    label: 'Other Assets',
+    match: ['**/*', '!**/*.scss', '!**.css']
+  }
+});
+
 /* Tell Fractal where the documentation pages will live */
 fractal.docs.set('path', __dirname + '/src/docs');
 
@@ -29,13 +40,21 @@ const mandelbrot = require('@frctl/mandelbrot');
 
 // create a new instance with custom config options
 const myCustomisedTheme = mandelbrot({
-    skin: "green",
-    styles: [
-        "default",
-        "/css/mode-theme.css"
-    ]
-    // Add the comments panel
-    // panels: ["html", "view", "context", "resources", "info", "notes"]
+  skin: "green",
+  styles: [
+    "default",
+    "/css/mode-theme.css"
+  ],
+  // Add the comments panel
+  panels: [
+    "html",
+    "view",
+    // "context",
+    "info",
+    "notes",
+    "framework",
+    "resources"
+  ]
 });
 
 // specify a directory to hold the theme override templates
