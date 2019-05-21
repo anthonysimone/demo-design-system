@@ -1,5 +1,5 @@
 {
-  "name": "webapp-storybook",
+  "name": "@asimone/webapp-storybook",
   "version": "0.0.4",
   "scripts": {
     "ng": "ng",
