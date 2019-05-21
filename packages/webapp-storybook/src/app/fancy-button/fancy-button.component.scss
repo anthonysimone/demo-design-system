@@ -1,0 +1,7 @@
+// @import 'base/colors';
+// @import 'framework-core';
+@import '~@asimone/webapp-framework/scss/framework/framework-core';
+
+.fancy-button {
+  @include btn(default);
+}

@@ -3,22 +3,22 @@
 ////
 
 // Graphik
-$graphik-variants: (
-  (200  false  light),
-  (400  false  regular),
-  (500  false  medium)
-);
+// $graphik-variants: (
+//   (200  false  light),
+//   (400  false  regular),
+//   (500  false  medium)
+// );
 
-@each $weight, $italic, $variant in $graphik-variants {
-  @font-face {
-    font-family: 'Graphik';
-    font-weight: $weight;
-    @if $italic {
-      font-style: italic;
-    }
-    // eot font files were misbehaving on windows, and woff is supported by IE9+ anyway
-    src: url(font-path('graphik/graphik-#{$variant}-web.woff2'))  format('woff2'),
-         url(font-path('graphik/graphik-#{$variant}-web.woff'))   format('woff'),
-         url(font-path('graphik/graphik-#{$variant}-web.ttf'))    format('truetype');
-  }
-}
+// @each $weight, $italic, $variant in $graphik-variants {
+//   @font-face {
+//     font-family: 'Graphik';
+//     font-weight: $weight;
+//     @if $italic {
+//       font-style: italic;
+//     }
+//     // eot font files were misbehaving on windows, and woff is supported by IE9+ anyway
+//     src: url(font-path('graphik/graphik-#{$variant}-web.woff2'))  format('woff2'),
+//          url(font-path('graphik/graphik-#{$variant}-web.woff'))   format('woff'),
+//          url(font-path('graphik/graphik-#{$variant}-web.ttf'))    format('truetype');
+//   }
+// }
