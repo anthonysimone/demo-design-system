@@ -1,6 +1,7 @@
 {
   "name": "@asimone/webapp-storybook",
   "version": "0.0.7",
+  "main": "index.html",
   "publishConfig": {
     "access": "public"
   },
