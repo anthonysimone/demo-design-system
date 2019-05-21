@@ -1,6 +1,9 @@
 {
   "name": "@asimone/webapp-storybook",
   "version": "0.0.5",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
