@@ -56,7 +56,7 @@ workflows:
   version: 2
   only_build:
     jobs:
-      - build
+      - build:
           filters:
             tags:
               ignore: /^v.*/
