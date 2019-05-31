@@ -1,14 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
 button.btn,
-a.btn {
+a.btn,
+.btn {
   @include btn(default);
 }
 
 button.btn--small,
-a.btn--small {
+a.btn--small,
+.btn--small {
   @include btn(default, small);
 }
 
 button.btn--alert,
-a.btn--alert {
+a.btn--alert,
+.btn--alert {
+  @include btn(alert);
+}
+
+button.btn--alert-small,
+a.btn--alert-small,
+.btn--alert-small {
   @include btn(alert);
 }
