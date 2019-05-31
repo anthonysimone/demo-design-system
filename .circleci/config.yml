@@ -36,11 +36,38 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
       # run tests!
       # - run: yarn test
+
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Publish
+          command: 'lerna publish --yes'
 
 workflows:
   version: 2
   only_build:
     jobs:
       - build
+
+  build_publish:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^v.*/
+      - publish:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches: /.*/
