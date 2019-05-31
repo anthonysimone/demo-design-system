@@ -57,6 +57,9 @@ workflows:
   only_build:
     jobs:
       - build
+          filters:
+            tags:
+              ignore: /^v.*/
 
   build_publish:
     jobs:
@@ -64,6 +67,8 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
       - publish:
           requires:
             - build
