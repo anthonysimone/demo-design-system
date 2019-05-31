@@ -60,20 +60,22 @@ workflows:
           filters:
             tags:
               ignore: /^v.*/
+            branches:
+              ignore: release
 
   build_publish:
     jobs:
       - build:
           filters:
             tags:
-              only: /^v.*/
-            branches:
               ignore: /.*/
+            branches:
+              only: release
       - publish:
           requires:
             - build
           filters:
             tags:
-              only: /^v.*/
+              only: /.*/
             branches:
-              ignore: /.*/
+              ignore: release
