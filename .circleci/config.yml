@@ -50,7 +50,7 @@ jobs:
           at: ~/repo
       - run:
           name: Publish
-          command: 'npx lerna publish --yes'
+          command: 'npx lerna publish from-git --yes'
 
 workflows:
   version: 2
