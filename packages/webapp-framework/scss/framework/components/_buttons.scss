@@ -147,3 +147,14 @@ $ghost-buttons: (
     cursor: default;
   }
 }
+
+
+/// New Button
+/// @example scss - Create ghost button
+///   button {
+///     @include new-btn();
+///   }
+@mixin new-btn() {
+  display: block;
+  background: pink;
+}

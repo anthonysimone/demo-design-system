@@ -1,18 +1,3 @@
-@font-face {
-  font-family: 'Graphik';
-  font-weight: 200;
-  src: url(font-path("graphik/graphik-light-web.woff2")) format("woff2"), url(font-path("graphik/graphik-light-web.woff")) format("woff"), url(font-path("graphik/graphik-light-web.ttf")) format("truetype"); }
-
-@font-face {
-  font-family: 'Graphik';
-  font-weight: 400;
-  src: url(font-path("graphik/graphik-regular-web.woff2")) format("woff2"), url(font-path("graphik/graphik-regular-web.woff")) format("woff"), url(font-path("graphik/graphik-regular-web.ttf")) format("truetype"); }
-
-@font-face {
-  font-family: 'Graphik';
-  font-weight: 500;
-  src: url(font-path("graphik/graphik-medium-web.woff2")) format("woff2"), url(font-path("graphik/graphik-medium-web.woff")) format("woff"), url(font-path("graphik/graphik-medium-web.ttf")) format("truetype"); }
-
 body {
   font-family: "Graphik", Helvetica, sans-serif; }
 

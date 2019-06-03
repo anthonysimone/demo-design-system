@@ -12,15 +12,16 @@ const concat = require('gulp-concat');
 /**
  * Compile the sassdoc project (this will blow away the custom css)
  */
-gulp.task('sassdoc:compile', function () {
+function sassdocCompile() {
   return gulp.src('scss/**/*.scss')
     .pipe(sassdoc());
-});
+}
+gulp.task('sassdoc:compile', sassdocCompile);
 
 /**
  * Compile the custom theme
  */
-gulp.task('sassdoc:sass', function () {
+function sassdocSass() {
   return gulp.src('./scss/custom-theme/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
@@ -31,27 +32,33 @@ gulp.task('sassdoc:sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./sassdoc-custom-theme/css'));
-});
+}
+gulp.task('sassdoc:sass', sassdocSass);
 
 /**
  * Concatenate the default theme css with the custom theme css
  */
-gulp.task('sassdoc:concat', function() {
+function sassdocConcat() {
   return gulp.src(['./sassdoc/assets/css/main.css', './sassdoc-custom-theme/css/sassdoc-theme.css'])
     .pipe(concat('main.css'))
     .pipe(gulp.dest('./sassdoc/assets/css/'));
-});
+}
+gulp.task('sassdoc:concat', sassdocConcat);
 
 /**
  * Recompile sassdoc as well as regenerating the compiled css with custom theme
  */
-gulp.task('sassdoc', gulp.series(['sassdoc:compile', 'sassdoc:sass', 'sassdoc:concat']));
+function sassdocBuildSeries() {
+  return gulp.series(sassdocCompile, sassdocSass, sassdocConcat);
+}
+gulp.task('sassdoc:build', sassdocBuildSeries());
 
 /**
  * Watch the entire sassdoc project and recompile when necessary
  */
-gulp.task('sassdoc:watch', function () {
-  return gulp.watch('./scss/**/*.scss', gulp.series('sassdoc'));
-});
+function sassdocWatch() {
+  gulp.watch('./scss/**/*.scss', sassdocBuildSeries());
+}
+gulp.task('sassdoc:watch', sassdocWatch);
 
-gulp.task('default', gulp.series('sassdoc:watch'));
+gulp.task('default', sassdocWatch);
