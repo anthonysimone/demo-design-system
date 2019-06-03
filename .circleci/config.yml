@@ -112,19 +112,19 @@ workflows:
             branches:
               only: release
 
-  build_publish_from_git:
-    jobs:
-      - build:
-          filters:
-            tags:
-              only: /^@asimone.*/
-            branches:
-              ignore: /.*/
-      - publish_from_git:
-          requires:
-            - build
-          filters:
-            tags:
-              only: /^@asimone.*/
-            branches:
-              ignore: /.*/
+  # build_publish_from_git:
+  #   jobs:
+  #     - build:
+  #         filters:
+  #           tags:
+  #             only: /^@asimone.*/
+  #           branches:
+  #             ignore: /.*/
+  #     - publish_from_git:
+  #         requires:
+  #           - build
+  #         filters:
+  #           tags:
+  #             only: /^@asimone.*/
+  #           branches:
+  #             ignore: /.*/
