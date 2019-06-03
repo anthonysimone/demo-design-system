@@ -2,6 +2,9 @@
   "name": "demo-design-system",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "gh-pages": "npx gh-pages -d packages -s '{webapp-library/build/**/*,webapp-framework/sassdoc/**/*,webapp-storybook/static-build/**/*}'"
+  },
   "license": "MIT",
   "private": true,
   "workspaces": {

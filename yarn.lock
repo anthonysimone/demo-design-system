@@ -12529,7 +12529,7 @@ sassdoc-theme-default@^2.8.1:
     nunjucks "^3.1.7"
     sassdoc-extras "^2.5.0"
 
-sassdoc@2.7.0:
+sassdoc@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/sassdoc/-/sassdoc-2.7.0.tgz#41504feb9ae9b0ffaa45520ed247093c376ef0fc"
   integrity sha512-mj+kJJdZwgg2Jw41rR9owLZbrphEoSH+p2V3xV9YWZOy15cL7O25OcWFPZ2Cqcc0ETP+VybN9ZWe+GXSFq00Xw==
