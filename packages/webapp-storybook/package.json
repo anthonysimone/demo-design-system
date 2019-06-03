@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "npx build-storybook -o static-build"
   },
   "dependencies": {
     "@angular/animations": "~7.2.0",
