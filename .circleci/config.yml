@@ -50,7 +50,7 @@ jobs:
           at: ~/repo
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/rep
       - run:
           name: Publish
           command: 'npx lerna publish from-git --yes'
