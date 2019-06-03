@@ -43,7 +43,7 @@ jobs:
       # run tests!
       # - run: yarn test
 
-  publish:
+  publish_from_git:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -54,6 +54,18 @@ jobs:
       - run:
           name: Publish
           command: 'npx lerna publish from-git --yes'
+
+  publish_from_package:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish
+          command: 'npx lerna publish from-package --yes'
 
 workflows:
   version: 2
@@ -66,7 +78,24 @@ workflows:
             branches:
               ignore: release
 
-  build_publish:
+  # build_publish:
+  #   jobs:
+  #     - build:
+  #         filters:
+  #           tags:
+  #             ignore: /.*/
+  #           branches:
+  #             only: release
+  #     - publish:
+  #         requires:
+  #           - build
+  #         filters:
+  #           tags:
+  #             ignore: /.*/
+  #           branches:
+  #             only: release
+
+  build_publish_from_package:
     jobs:
       - build:
           filters:
@@ -74,7 +103,7 @@ workflows:
               ignore: /.*/
             branches:
               only: release
-      - publish:
+      - publish_from_package:
           requires:
             - build
           filters:
@@ -91,7 +120,7 @@ workflows:
               only: /^@asimone.*/
             branches:
               ignore: /.*/
-      - publish:
+      - publish_from_git:
           requires:
             - build
           filters:
