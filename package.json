@@ -5,9 +5,12 @@
   "license": "MIT",
   "private": true,
   "workspaces": {
-    "packages": ["packages/*"]
+    "packages": [
+      "packages/*"
+    ]
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "lerna": "^3.13.1"
   }
 }
