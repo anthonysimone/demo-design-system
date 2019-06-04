@@ -1,6 +1,6 @@
 {
   "name": "@asimone/webapp-storybook",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "index.html",
   "publishConfig": {
     "access": "public"
@@ -24,7 +24,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "@asimone/webapp-framework": "^0.0.6",
+    "@asimone/webapp-framework": "^0.0.7",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
