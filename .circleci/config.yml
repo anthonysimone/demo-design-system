@@ -70,11 +70,11 @@ jobs:
   deploy_gh_pages:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/repo
       - add_ssh_keys:
           fingerprints:
             - "dc:77:1e:34:a6:82:c0:9f:1a:41:40:86:af:6c:90:db"
+      - attach_workspace:
+          at: ~/repo
       - run:
           name: Install and configure dependencies
           command: |
