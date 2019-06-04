@@ -15,4 +15,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Storybook
 
 The purpose of this project is to build a component library of presentational components that can be used in webapp. To run storybook locally, run `yarn run storybook`.
-

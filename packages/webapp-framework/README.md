@@ -23,3 +23,4 @@ gulp sassdoc:watch
 ```
 
 Since Sassdoc is just a static site generator, if you simply want to view the project locally, there's no need to compile, just open the html file in your browser.
+
