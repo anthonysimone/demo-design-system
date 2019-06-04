@@ -67,6 +67,24 @@ jobs:
           name: Publish
           command: 'npx lerna publish from-package --yes'
 
+  deploy_gh_pages:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - add_ssh_keys:
+          fingerprints:
+            - "dc:77:1e:34:a6:82:c0:9f:1a:41:40:86:af:6c:90:db"
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "anthony.simone7@gmail.com"
+            git config user.name "anthonysimone"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: yarn run gh-pages
+
 workflows:
   version: 2
   only_build:
@@ -111,6 +129,16 @@ workflows:
               ignore: /.*/
             branches:
               only: release
+      - deploy_gh_pages:
+          requires:
+            - build
+            - publish_from_package
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: release
+
 
   # build_publish_from_git:
   #   jobs:
